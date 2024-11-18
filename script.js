@@ -17,5 +17,14 @@ function primitiveMultiply(a, b) {
 }
 
 function reliableMultiply(a, b) {
-  // Your code here.
+  while (true) { // The while loop will run un-till its true */
+    try{
+      return primitiveMultiply(a, b); // It will return if the answer is correct */
+    } catch(errors){
+      if(!(errors instanceof MultiplicatorUnitFailure)){
+        throw errors;
+      }
+    }
+  }
 }
+console.log(reliableMultiply(8, 8));
